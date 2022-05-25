@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\EnviarMensagemController::class, 'index'])->name('welcome');
+Route::post('/enviar-mensagem-no-whats-pelo-pc', [App\Http\Controllers\EnviarMensagemController::class, 'enviar'])->name('enviar');
